@@ -56,14 +56,15 @@ List<UserVo> userList = (List<UserVo>) request.getAttribute("userList");
 			<th>index</th>
 			<th>count</th>
 		</tr>
-
+													<!-- var = list size개념 varStatus = i++ -->
 		<c:forEach items="${requestScope.userList}" var="userVo" varStatus="status" begin="" end="">
 			<tr>
 				<td>${userVo.no}</td>
 				<td>${userVo.name}</td>
 				<td>${userVo.email}</td>
-				<td>${status.index}</td>
-				<td>${status.count}</td>
+				<td>${status.index}</td><!-- 톰캣에서 생성되는  -->
+				<td>${status.count}</td><!--  -->
+				
 			</tr>
 		</c:forEach>
 
